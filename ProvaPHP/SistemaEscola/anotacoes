@@ -1,0 +1,36 @@
+{
+    "id": "1",
+    "nome": "Devedor 1",
+    "email": [
+        {
+            "id": "1",
+            "email": "d1@d1.com",
+            "devedor_id": "1"
+        },
+
+
+
+
+        $jogo = array
+(
+    array(1, "Zé", 11),
+    array(2, "José", 4),
+    array(3, "Zéca", 22)
+);
+
+
+
+$x = [
+        "array1" => [
+            "aaa"=>100,
+            "bbb"=>200,
+            "ccc"=>300
+        ],
+        "array2" => [
+            "ddd"=>500,
+            "eee"=>600,
+            "fff"=>700
+        ]
+    ];
+
+echo $x["array"]["bbb"];

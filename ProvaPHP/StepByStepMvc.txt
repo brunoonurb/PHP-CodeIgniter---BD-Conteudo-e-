@@ -1,0 +1,24 @@
+1 - Baixar o framework MVC
+2 - Alterar o nome da pasta para SistemaLoja
+============================================
+3 - Criar um banco de dados com uma tabela cadastro com coluna nome e senha
+3.1 - Ir depois em CONFIG > DATABASE e alterar username para root e database para o nome da sua database
+3.2 - Ir então em CONFIG > AUTOLOAD e alterar o autoload de libraries para $autoload['libraries'] = array('database');
+===============VERIFICAR LOGIN=============================
+4 - Criar um controle INICIO com tudo o que estava no Welcome com a função index apontada para a view LOGIN alem de mudar a classe dele para INICIO
+5 - Ir em CONFIG e alterar ROUTES para o controle INICIO.
+6 - Criar a view LOGIN
+7 - criar um crontroller Usuario,copiar tudo do controler INICIO e alterar a classe para Usuario, ela tera os metodos que irao ser usados para cadastrar,visualizar, atualizar e deletar usuario
+8 - criar o metodo validarLogin dentro do controller Usuario.
+9 - Esse metodo validar carrega a model Usuario_model que sera criada logo a seguir: $this->load->model("Usuario_model");
+10- Depois de carregada o controler recebe o metodo verificarLogin que aceita 2 variaveis que serão mandadas por post: $this->Usuario_model->verificarLogin($_POST["nome"],$_POST["senha"]);
+11 - Uma variavel $result recebe o retorno desse metodo, e se tiver resultado, ele faz uma coisa, senão ele faz outra.
+12 - Criar Usuario_model e criar a função verificarLogin($nome,$senha){
+
+return $this->db->query("SELECT * FROM cadastro WHERE nome='{$nome}' AND senha='{$senha}'")->result_array();
+}
+===============CADASTRAR=====================
+13 - Para faclitar navegar entre as paginas, ir em autoload  e em helper digitar dentro : array('url');, depois ir em config e em base url colocar o endereço do sistema
+14 - criar a view cadastro e criar um controler que chama ela , este sera chamado na view login caso o usuario quiser cadastrar
+15 - crie um controle que faça inserção no banco
+
